@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">DroidQuest</string>
+    <string name="true_button">Да</string>
+    <string name="false_button">Нет</string>
+    <string name="next_button">далее</string>
+    <string name="correct_toast">Верно!</string>
+    <string name="incorrect_toast">Не верно!</string>
+    <string name="question_android">OC Android основана на ядре Linux</string>
+    <string name="question_linear">Разметка LinearLayout позиционируетсвои дочерние
+        элементы в строки и столбцы.</string>
+    <string name="question_service">Компонент Android-приложения Service
+        предоставляют доступ к данным.</string>
+    <string name="question_res">Ресурсы приложения содержатся в отдельном
+        файле XML.</string>
+    <string name="question_manifest">AndroidManifest.xml предоставляет
+        системе основную информацию о программе.</string>
+    <string name="question_oop">Наследование не является одним из принципов ООП.</string>
+    <string name="question_destroy">Метод onDestroy() вызывается если свернуть приложение.</string>
+    <string name="question_textView">TextView может быть объектом на который можно нажать.</string>
+    <string name="question_button">Button относится к виджетам.</string>
+    <string name="question_listAdapter">ListAdapter не отосится к виджетам.</string>
+    <string name="warning_text">Вы уверены, что хотите это сделать?</string>
+    <string name="show_answer_button">Показать ответ</string>
+    <string name="deceit_button">Обмануть !</string>
+    <string name="judgment_toast">Обманывать нельзя.</string>
+</resources>
