@@ -7,10 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_deceit.*
 
 class DeceitActivity : AppCompatActivity() {
-    private lateinit var mAnswerTextView: TextView
-    private lateinit var mShowAnswer: Button
     private var mAnswerShown = false
 
     companion object {
@@ -33,18 +32,16 @@ class DeceitActivity : AppCompatActivity() {
         }
         val mAnswerIsTrue = intent.getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false)
 
-        mAnswerTextView = findViewById(R.id.answerTextView)
-        mShowAnswer = findViewById(R.id.showAnswerButton)
         if (mAnswerShown){   //проверка: если пользователь посмотрел ответ, то
             setText(mAnswerIsTrue)
         }
-        mShowAnswer.setOnClickListener {
+        bShowAnswer.setOnClickListener {
             setText(mAnswerIsTrue)
         }
     }
 
     private fun setText(mAnswerIsTrue: Boolean){ //вывод правильного ответа и передача информации о том что пользовотель подсмотрел ответ
-        mAnswerTextView.setText(
+        tvAnswerTextView.setText(
             if (mAnswerIsTrue) R.string.true_button
             else R.string.false_button)
         setAnswerShownResult(true)

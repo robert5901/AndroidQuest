@@ -4,25 +4,15 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
-import android.view.Menu
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
 import android.widget.Toast
-import java.util.*
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "QuestActivity"
     private val KEY_INDEX = "index" //ключ для метода который сохраняет текущий вопрос
     private val REQUEST_CODE_DECEIT = 0 //ключ для startActivityForResult
-    private lateinit var mTrueButton: Button
-    private lateinit var mFalseButton: Button
-    private lateinit var mDeceitButton: Button
-    private lateinit var mNextButton: com.google.android.material.button.MaterialButton
-    private lateinit var mBackButton: com.google.android.material.button.MaterialButton
-    private lateinit var mQuestionTextView: TextView
     private val mQuestionBank = listOf(   //список вопросов
         Question(R.string.question_android, true),
         Question(R.string.question_linear, false),
@@ -46,34 +36,28 @@ class MainActivity : AppCompatActivity() {
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0)
         }
 
-        mTrueButton = findViewById(R.id.trueButton)
-        mFalseButton = findViewById(R.id.falseButton)
-        mNextButton = findViewById(R.id.next_button)
-        mBackButton = findViewById(R.id.back_button)
-        mDeceitButton = findViewById(R.id.deceit_button)
-        mQuestionTextView = findViewById(R.id.question_text_view)
-        mTrueButton.setOnClickListener {
-           checkAnswer(true)
+        bTrueButton.setOnClickListener{
+            checkAnswer(true)
         }
-        mFalseButton.setOnClickListener {
+        bFalseButton.setOnClickListener {
            checkAnswer(false)
         }
         //переход к след вопросу при нажатии на TextView
-        mQuestionTextView.setOnClickListener{
+        tvQuestionTextView.setOnClickListener{
             mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.size
             updateQuestion()
         }
-        mNextButton.setOnClickListener {
+        bNextButton.setOnClickListener {
             mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.size
             updateQuestion()
             isDeceiter = false
         }
-        mDeceitButton.setOnClickListener {
+        bDeceitButton.setOnClickListener {
             val answerIsTrue = mQuestionBank[mCurrentIndex].answerTrue
             val intent = DeceitActivity.newIntent(this, answerIsTrue)
             startActivityForResult(intent, REQUEST_CODE_DECEIT) //если пользователь нажимает на кнопку "Обмануть", чтобы подсмотреть ответ, происходит переход в другую активити и ожидается возврат result, т.е подсмотрел ли пользователь ответ
         }
-        mBackButton.setOnClickListener{
+        bBackButton.setOnClickListener{
             if (mCurrentIndex > 0)
                 mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.size
             updateQuestion()
@@ -89,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateQuestion(){
         val question = mQuestionBank[mCurrentIndex].textResId
-        mQuestionTextView.setText(question)
+        tvQuestionTextView.setText(question)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

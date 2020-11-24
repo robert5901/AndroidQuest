@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/question_text_view"
+        android:id="@+id/tvQuestionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="24dp"
@@ -27,7 +27,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/trueButton"
+            android:id="@+id/bTrueButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -35,7 +35,7 @@
             android:text="@string/true_button"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/falseButton"
+            android:id="@+id/bFalseButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="19sp"
@@ -45,7 +45,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/deceit_button"
+        android:id="@+id/bDeceitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="17sp"
@@ -62,7 +62,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/back_button"
+            android:id="@+id/bBackButton"
             style="@style/Widget.MaterialComponents.Button.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
             app:icon="@drawable/arrow_left" />
 
         <Button
-            android:id="@+id/next_button"
+            android:id="@+id/bNextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.Button.Icon"
