@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mTrueButton: Button
     private lateinit var mFalseButton: Button
     private lateinit var mDeceitButton: Button
-    private lateinit var mNextButton: ImageButton
-    private lateinit var mBackButton: ImageButton
+    private lateinit var mNextButton: com.google.android.material.button.MaterialButton
+    private lateinit var mBackButton: com.google.android.material.button.MaterialButton
     private lateinit var mQuestionTextView: TextView
     private val mQuestionBank = listOf(   //список вопросов
         Question(R.string.question_android, true),

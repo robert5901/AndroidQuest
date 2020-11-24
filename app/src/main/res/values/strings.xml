@@ -23,4 +23,6 @@
     <string name="show_answer_button">Показать ответ</string>
     <string name="deceit_button">Обмануть !</string>
     <string name="judgment_toast">Обманывать нельзя.</string>
+    <string name="forward_button_text">Вперед</string>
+    <string name="back_button_text">Назад</string>
 </resources>
